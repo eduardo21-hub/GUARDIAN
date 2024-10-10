@@ -36,6 +36,10 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Aqui você pode adicionar a navegação para outra tela
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GerenciarContatosPage()),
+                );
               },
               child: Text('Gerenciar Contatos'),
             ),
@@ -47,6 +51,24 @@ class HomePage extends StatelessWidget {
               child: Text('Configurar Emergências'),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+// Página para gerenciar contatos
+class GerenciarContatosPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Gerenciar Contatos'),
+      ),
+      body: Center(
+        child: Text(
+          'Aqui você pode gerenciar seus contatos.',
+          style: TextStyle(fontSize: 20),
         ),
       ),
     );
